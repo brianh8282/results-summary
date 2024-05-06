@@ -1,11 +1,28 @@
-/* Variables here */
-:root {
-    --variable: value;
+@font-face {
+  font-family: HankenGrotesk;
+  src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
 }
 
-@font-face {
-    font-family: HankenGrotesk;
-    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+/* Variables here */
+:root {
+   --reaction: 0, 90%, 50%;
+   --memory: 39, 100%, 56%;
+   --verbal: 166, 100%, 37%;
+   --visual: 234, 85%, 45%;
+
+   --result-background: linear-gradient(hsla(252, 100%, 67%, 1), hsla(241, 81%, 54%, 1));
+   --circle-background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+
+   --White: 0, 0%, 100%;
+   --Pale-blue: 221, 100%, 96%;
+   --Light-lavender: 241, 100%, 89%;
+   --Dark-gray-blue: 224, 30%, 27%;
+
+   --paragraph-size: 18px;
+   --font: "HankenGrotesk";
+   --weight500: 500;
+   --weight700: 700;
+   --weight800:800;
 }
 
 /* Box sizing rules */
@@ -35,7 +52,9 @@ html, body {
 
 main {
     height: 100%;
-    font-family: "HankenGrotesk";
+    font-family: var(--font);
+    font-size: var(--paragraph-size);
+    font-weight: var(--weight500);
 }
 
 
@@ -44,6 +63,7 @@ main {
     display:flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--result-background);
     border: 10px solid blue;
 }
 
@@ -52,20 +72,55 @@ section.results {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  border: 10px solid blue;
+  background: linear-gradient(hsl(252, 100%, 67%) , hsl(241, 81%, 54%));
 }
 
 section.results h1 {
-  font-size: large;
+
 }
 
 section.summary {
   display: flex;
   flex-direction: column;
-
-  border: 10px solid blue;
+  justify-content: center;
+  gap: 1.5rem;
+  box-shadow: 0.5rem 0.5rem hsla(var(--Dark-gray-blue),0.1);
 }
 
 .summary .categories {
   display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.category {
+  display: grid;
+  grid-template-columns: 0.2fr 2fr 2fr;
+  gap: 1rem;
+  padding: 0.5rem 0.2rem;
+}
+
+.reaction {
+  background: hsla(var(--reaction), 0.2);
+  color: hsla(var(--reaction), 0.7);
+}
+
+.memory {
+  background: hsla(var(--memory), 0.2);
+  color: hsla(var(--memory), 0.7);
+}
+
+.verbal {
+  background: hsla(var(--verbal), 0.2);
+  color: hsla(var(--verbal), 0.7);
+}
+
+.visual {
+  background: hsla(var(--visual), 0.2);
+  color: hsla(var(--visual), 0.7);
+}
+
+.category p {
+  color: hsl(var(--Dark-gray-blue));
+  margin-left: 3rem;
 }
