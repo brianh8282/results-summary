@@ -182,8 +182,12 @@ section.results h1 {
   padding: 1rem 0;
   background: hsl(var(--Dark-gray-blue));
   color: hsl(var(--White));
+  cursor: pointer;
 }
 
+.summary button:hover {
+  background: var(--result-background);
+}
 @media screen and (max-width: 600px){
   :root {
     font-size: calc(max-width / 40);
