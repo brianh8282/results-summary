@@ -23,6 +23,8 @@
    --weight500: 500;
    --weight700: 700;
    --weight800:800;
+
+   --border-rad: 0.5rem;
 }
 
 /* Box sizing rules */
@@ -63,8 +65,8 @@ main {
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--result-background);
     border: 10px solid blue;
+    background: hsl(var(--White));
 }
 
 section.results {
@@ -75,16 +77,19 @@ section.results {
   background: linear-gradient(hsl(252, 100%, 67%) , hsl(241, 81%, 54%));
 }
 
-section.results h1 {
-
+.results-summary h1 {
+  font-size: 1.3rem;
 }
 
 section.summary {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
-  box-shadow: 0.5rem 0.5rem hsla(var(--Dark-gray-blue),0.1);
+  gap: 2rem;
+  background:  hsl(var(--White));
+  box-shadow: 0.3rem 0.3rem 0.8rem hsla(var(--Light-lavender),0.4);
+  padding: 2rem;
+  font-weight: var(--weight700);
 }
 
 .summary .categories {
@@ -97,30 +102,42 @@ section.summary {
   display: grid;
   grid-template-columns: 0.2fr 2fr 2fr;
   gap: 1rem;
-  padding: 0.5rem 0.2rem;
+  padding: 1rem;
+  border-radius: var(--border-rad);
 }
 
 .reaction {
-  background: hsla(var(--reaction), 0.2);
-  color: hsla(var(--reaction), 0.7);
+  background: hsla(var(--reaction), 0.1);
+  color: hsla(var(--reaction), 0.6);
 }
 
 .memory {
-  background: hsla(var(--memory), 0.2);
-  color: hsla(var(--memory), 0.7);
+  background: hsla(var(--memory), 0.1);
+  color: hsla(var(--memory), 0.6);
 }
 
 .verbal {
-  background: hsla(var(--verbal), 0.2);
-  color: hsla(var(--verbal), 0.7);
+  background: hsla(var(--verbal), 0.1);
+  color: hsla(var(--verbal), 0.6);
 }
 
 .visual {
-  background: hsla(var(--visual), 0.2);
-  color: hsla(var(--visual), 0.7);
+  background: hsla(var(--visual), 0.1);
+  color: hsla(var(--visual), 0.6);
 }
 
 .category p {
-  color: hsl(var(--Dark-gray-blue));
+  color: hsla(var(--Dark-gray-blue), 0.5);
   margin-left: 3rem;
+}
+
+.category p span {
+  color: hsla(var(--Dark-gray-blue), 1);
+}
+
+.summary button {
+  border-radius: 1.5rem;
+  padding: 1rem 0;
+  background: hsl(var(--Dark-gray-blue));
+  color: hsl(var(--White));
 }
