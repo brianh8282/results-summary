@@ -128,7 +128,8 @@ section.results h1 {
 
 .results .text {
   color: hsla(var(--Light-lavender), 0.8);
-  word-wrap: break-word;
+  max-width: 16rem;
+  text-align: center;
 }
 
 .summary .categories {
@@ -186,6 +187,7 @@ section.results h1 {
 .summary button:hover {
   background: var(--result-background);
 }
+
 @media screen and (max-width: 600px){
   :root {
     font-size: calc(max-width / 40);
